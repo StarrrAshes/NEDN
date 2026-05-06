@@ -1,0 +1,236 @@
+
+<h2 class="sr-only">Nuclear Chemistry Review Guide for Regents</h2>
+
+<style>
+  .guide { padding: 1.5rem 0; font-size: 15px; color: var(--color-text-primary); }
+  .section { margin-bottom: 2rem; }
+  .section-title { font-size: 18px; font-weight: 500; margin: 0 0 0.75rem; padding-bottom: 6px; border-bottom: 1.5px solid var(--color-border-tertiary); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 1rem; }
+  .card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 0.9rem 1rem; }
+  .card-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 5px; }
+  .card-title { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+  .card-body { font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; }
+  .alpha .card-label { color: #3C3489; }
+  .alpha { border-left: 3px solid #7F77DD; border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0; }
+  .beta .card-label { color: #0F6E56; }
+  .beta { border-left: 3px solid #1D9E75; border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0; }
+  .positron .card-label { color: #993C1D; }
+  .positron { border-left: 3px solid #D85A30; border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0; }
+  .gamma .card-label { color: #27500A; }
+  .gamma { border-left: 3px solid #639922; border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0; }
+  .eq { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 6px 10px; font-family: var(--font-mono); font-size: 13px; margin-top: 6px; color: var(--color-text-primary); }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: var(--color-background-secondary); font-weight: 500; padding: 7px 10px; text-align: left; border: 0.5px solid var(--color-border-tertiary); }
+  td { padding: 7px 10px; border: 0.5px solid var(--color-border-tertiary); vertical-align: top; line-height: 1.5; color: var(--color-text-secondary); }
+  .half-life-box { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 1rem; }
+  .half-life-box .big { font-size: 14px; font-weight: 500; margin-bottom: 8px; }
+  .steps { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; font-size: 13px; margin-top: 8px; }
+  .step-box { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 4px 9px; font-weight: 500; font-size: 13px; }
+  .arrow { color: var(--color-text-secondary); }
+  .pill { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 99px; margin-right: 4px; }
+  .pill-info { background: var(--color-background-info); color: var(--color-text-info); }
+  .pill-success { background: var(--color-background-success); color: var(--color-text-success); }
+  .pill-danger { background: var(--color-background-danger); color: var(--color-text-danger); }
+  .pill-warn { background: var(--color-background-warning); color: var(--color-text-warning); }
+  .pen-bar-wrap { margin: 0.5rem 0 0.75rem; }
+  .pen-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 13px; }
+  .pen-bar { height: 10px; border-radius: 99px; }
+  .pen-label { min-width: 65px; color: var(--color-text-secondary); }
+  .pen-block { font-size: 12px; color: var(--color-text-secondary); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .benefit-card { background: var(--color-background-success); border-radius: var(--border-radius-md); padding: 0.7rem 0.9rem; font-size: 13px; color: var(--color-text-success); line-height: 1.6; }
+  .risk-card { background: var(--color-background-danger); border-radius: var(--border-radius-md); padding: 0.7rem 0.9rem; font-size: 13px; color: var(--color-text-danger); line-height: 1.6; }
+  .benefit-card strong, .risk-card strong { display: block; font-weight: 500; margin-bottom: 4px; font-size: 14px; }
+  .fission-fusion { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 0.5rem; }
+  .ff-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 0.9rem 1rem; }
+  .ff-title { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+  .ff-body { font-size: 13px; color: var(--color-text-secondary); line-height: 1.55; }
+  .tip { font-size: 12px; color: var(--color-text-tertiary); margin-top: 5px; font-style: italic; }
+  @media (max-width: 480px) { .two-col, .fission-fusion { grid-template-columns: 1fr; } }
+</style>
+
+<div class="guide">
+
+  <div class="section">
+    <div class="section-title">Types of radioactive decay</div>
+    <div class="cards">
+      <div class="card alpha">
+        <div class="card-label">Alpha (α)</div>
+        <div class="card-title">Alpha decay</div>
+        <div class="card-body">Nucleus releases a helium nucleus (2 protons + 2 neutrons). Mass number drops by 4, atomic number drops by 2.</div>
+        <div class="eq">²²⁶₈₈Ra → ⁴₂He + ²²²₈₆Rn</div>
+      </div>
+      <div class="card beta">
+        <div class="card-label">Beta (β⁻)</div>
+        <div class="card-title">Beta decay</div>
+        <div class="card-body">Nucleus releases an electron. Atomic number increases by 1, mass number stays the same.</div>
+        <div class="eq">²³⁴₉₀Th → ⁰₋₁e + ²³⁴₉₁Pa</div>
+      </div>
+      <div class="card positron">
+        <div class="card-label">Positron (β⁺)</div>
+        <div class="card-title">Positron decay</div>
+        <div class="card-body">Nucleus releases a positron (positive electron). Atomic number decreases by 1, mass number stays the same.</div>
+        <div class="eq">³⁷₁₉K → ⁰₊₁e + ³⁷₁₈Ar</div>
+      </div>
+      <div class="card gamma">
+        <div class="card-label">Gamma (γ)</div>
+        <div class="card-title">Gamma decay</div>
+        <div class="card-body">Nucleus releases high-energy electromagnetic radiation. No mass, no charge — nothing changes in the atomic number or mass number.</div>
+      </div>
+    </div>
+    <p class="tip">💡 Use Table N on the Regents to identify the decay mode for a specific isotope.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Separating & penetrating power</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Charge</th>
+            <th>Deflects toward</th>
+            <th>Penetrating power</th>
+            <th>Blocked by</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Alpha</strong></td>
+            <td>Positive (+2)</td>
+            <td>Negative plate</td>
+            <td>Lowest</td>
+            <td>Paper</td>
+          </tr>
+          <tr>
+            <td><strong>Beta / Positron</strong></td>
+            <td>−1 / +1</td>
+            <td>Positive / negative plate</td>
+            <td>Medium</td>
+            <td>Thick wood</td>
+          </tr>
+          <tr>
+            <td><strong>Gamma</strong></td>
+            <td>None (0)</td>
+            <td>Not deflected</td>
+            <td>Highest</td>
+            <td>Thick lead block</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Half-life</div>
+    <div class="half-life-box">
+      <div class="big">Half-life = time for half the sample to decay. It never changes regardless of conditions.</div>
+      <div style="font-size:13px; color: var(--color-text-secondary); margin-bottom:8px;">Each period cuts the remaining amount in half. Count the steps, then divide total time by the number of steps.</div>
+      <div class="steps">
+        <span class="step-box">100 g</span><span class="arrow">→</span>
+        <span class="step-box">50 g</span><span class="arrow">→</span>
+        <span class="step-box">25 g</span><span class="arrow">→</span>
+        <span class="step-box">12.5 g</span>
+        <span style="font-size:13px; color: var(--color-text-secondary);">= 3 half-lives</span>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Example problem</th><th>Solution</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>100 g → 12.5 g in 90 years. What is the half-life?</td>
+            <td>3 half-life periods passed (100→50→25→12.5). <br><strong>90 ÷ 3 = 30 years</strong></td>
+          </tr>
+          <tr>
+            <td>What % of I-131 remains after 32 days? (half-life = 8 days)</td>
+            <td>32 ÷ 8 = 4 half-lives. 100% → 50% → 25% → 12.5% → <strong>6.25%</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tip">💡 Half-lives for all isotopes are listed in Table N on the Regents.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Transmutation</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-label" style="color: var(--color-text-secondary);">Natural</div>
+        <div class="card-title">Natural transmutation</div>
+        <div class="card-body">An isotope spontaneously turns into a different element through normal radioactive decay. Only one reactant on the left side of the equation.</div>
+        <div class="eq">³⁷₁₉K → ⁰₊₁e + ³⁷₁₈Ar</div>
+      </div>
+      <div class="card">
+        <div class="card-label" style="color: var(--color-text-secondary);">Artificial</div>
+        <div class="card-title">Artificial transmutation</div>
+        <div class="card-body">The nucleus is bombarded with a particle to force it to transform. Two reactants on the left side.</div>
+        <div class="eq">²⁷₁₃Al + ⁴₂He → ³⁰₁₅P + ¹₀n</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Nuclear reactions: fission vs fusion</div>
+    <div class="fission-fusion">
+      <div class="ff-card">
+        <div class="ff-title"><i class="ti ti-arrow-fork" aria-hidden="true" style="font-size:16px; vertical-align:-2px; margin-right:5px;"></i>Fission — split</div>
+        <div class="ff-body">A large nucleus is hit by a neutron and splits into two smaller nuclei, releasing more neutrons + huge amounts of energy. The extra neutrons trigger more fissions — this is a chain reaction. Used in atomic bombs and nuclear reactors.</div>
+        <div class="eq">²³⁵₉₂U + ¹₀n → ¹⁴¹₅₆Ba + ⁹²₃₆Kr + 3¹₀n + energy</div>
+      </div>
+      <div class="ff-card">
+        <div class="ff-title"><i class="ti ti-arrows-join" aria-hidden="true" style="font-size:16px; vertical-align:-2px; margin-right:5px;"></i>Fusion — join</div>
+        <div class="ff-body">Two light nuclei combine to form one heavier nucleus, releasing enormous energy. Requires tremendous activation energy because both nuclei are positively charged and repel each other.</div>
+        <div class="eq">²₁H + ²₁H → ⁴₂He + energy</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color: var(--color-text-secondary); margin-top: 8px;">In both reactions, some mass is converted into energy — this is why they release so much more energy than chemical reactions.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Benefits and risks of radioactivity</div>
+    <div class="two-col">
+      <div class="benefit-card">
+        <strong><i class="ti ti-plus" aria-hidden="true" style="font-size:14px; vertical-align:-1px; margin-right:4px;"></i>Benefits</strong>
+        Generates large amounts of electricity<br>
+        Radioactive tracers for research<br>
+        Medical diagnosis and treatment<br>
+        Keeps food fresh longer<br>
+        U-238 for dating non-living things<br>
+        C-14 for dating living things<br>
+        I-131 to treat/diagnose thyroid cancer<br>
+        Tc-99 to treat brain cancer
+      </div>
+      <div class="risk-card">
+        <strong><i class="ti ti-alert-triangle" aria-hidden="true" style="font-size:14px; vertical-align:-1px; margin-right:4px;"></i>Risks</strong>
+        Biological damage (mutations, etc.)<br>
+        Fission products take a very long time to decay to safe levels<br>
+        Reactor accidents can release radioactive fuel and waste<br>
+        Pollution from radioactive waste can harm people
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Key definitions to know</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Unstable nucleus</strong></td><td>A nucleus with an unfavorable neutron-to-proton ratio that breaks down by releasing particles or energy</td></tr>
+          <tr><td><strong>Isotope</strong></td><td>Atoms of the same element (same protons) with different numbers of neutrons — some isotopes are stable, others are not</td></tr>
+          <tr><td><strong>Radioisotope</strong></td><td>An unstable (radioactive) isotope that undergoes decay</td></tr>
+          <tr><td><strong>Half-life</strong></td><td>Time for half the mass of a radioisotope to decay; stays constant regardless of temperature, pressure, or other conditions</td></tr>
+          <tr><td><strong>Transmutation</strong></td><td>When an isotope turns into an isotope of a different element due to nuclear decay</td></tr>
+          <tr><td><strong>Fission</strong></td><td>Splitting a large nucleus into smaller ones, releasing energy and more neutrons</td></tr>
+          <tr><td><strong>Fusion</strong></td><td>Combining two small nuclei into one larger nucleus, releasing energy</td></tr>
+          <tr><td><strong>Chain reaction</strong></td><td>When neutrons from one fission trigger more fissions in a self-sustaining reaction (used in atomic bombs and reactors)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
